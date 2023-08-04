@@ -320,12 +320,17 @@ const food = [
     cab: 30,
   }
 ];
+//using map() creates a new array from calling a function for every array element
+//map() does not execute the function for empty elements.
 
+//map() does not change the original array
 // Function to list all the food items
 function listAllFoodItems(foodData) {
   return foodData.map((item) => item.foodname);
 }
-
+//The filter() method creates a new array filled with elements that pass a test provided by a function.
+//The filter() method does not execute the function for empty elements.
+//The filter() method does not change the original array.
 // Function to filter food items by category
 function filterByCategory(foodData, category) {
   return foodData
@@ -339,7 +344,8 @@ function filterByCalorieRange(foodData, minCalorie, maxCalorie) {
     .filter((item) => item.calorie >= minCalorie && item.calorie <= maxCalorie)
     .map((item) => item.foodname);
 }
-
+//The sort() sorts the elements of an array.
+//The sort() overwrites the original array.
 // Function to sort food items by protein content (highest to lowest)
 function sortByProteinContent(foodData) {
   return foodData.slice()
